@@ -627,6 +627,141 @@ h1 {
     border: 1px solid rgba(251, 191, 36, 0.2);
 }
 
+#fun-fact {
+    padding: 6rem 2rem;
+    border-top: 1px solid #1e293b;
+}
+
+.fun-fact-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.2rem;
+}
+
+.fun-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 14px;
+    padding: 1.6rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+    transition: border-color 0.25s ease, transform 0.2s ease;
+}
+
+.fun-card:hover {
+    border-color: #0d9488;
+    transform: translateY(-3px);
+}
+
+.fun-card-main {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    flex-direction: column;
+    background: linear-gradient(145deg, #0f1e1e, #0d1a1a);
+    border-color: rgba(13, 148, 136, 0.3);
+}
+
+.fun-card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(13, 148, 136, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #0d9488;
+    flex-shrink: 0;
+}
+
+.fun-card-main .fun-card-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.fun-card-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.fun-card-main .fun-card-content h3 {
+    font-size: 1.15rem;
+}
+
+.fun-card-content p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.fun-card-content em {
+    color: #0d9488;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.fun-watching {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(13, 148, 136, 0.08);
+    border: 1px solid rgba(13, 148, 136, 0.25);
+    border-radius: 50px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.78rem;
+    color: #0d9488;
+    font-weight: 500;
+}
+
+.watching-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #0d9488;
+    display: inline-block;
+    animation: gentlePulse 2s ease-in-out infinite;
+}
+
+.drama-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.drama-tag {
+    font-size: 0.75rem;
+    background: #1e293b;
+    border: 1px solid #30363d;
+    color: #64748b;
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+.drama-tag:hover {
+    background: rgba(13, 148, 136, 0.1);
+    border-color: #0d9488;
+    color: #0d9488;
+}
+
+.fun-quote {
+    font-size: 0.9rem ;
+    font-style: italic;
+    color: #64748b;
+    border-left: 3px solid #0d9488;
+    padding-left: 0.8rem;
+    margin: 0 ;
+    line-height: 1.6 ;
+}
+
+
 
 footer {
     text-align: center;
