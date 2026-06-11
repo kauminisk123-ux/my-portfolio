@@ -13,8 +13,19 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
 var navbar = document.getElementById('navbar');
 var sections = document.querySelectorAll('section[id]');
 var navLinks = document.querySelectorAll('.nav-links a');
+var progressBar = document.getElementById('progressBar');
+
 
 window.addEventListener('scroll', function() {
+
+
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var scrollPercent = (scrollTop / docHeight) * 100;
+    if (progressBar) {
+        progressBar.style.width = scrollPercent + '%';
+    }
+
 
     
     if (window.scrollY > 60) {
