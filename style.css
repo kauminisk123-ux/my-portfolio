@@ -157,8 +157,8 @@ h2 {
 
 
 .photo-wrapper {
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 3px solid #0d9488;
     overflow: hidden;
@@ -1190,4 +1190,62 @@ footer {
     transform: translateY(0);
 }
 
+@media (max-width: 768px) {
+    section {
+        padding: 4.5rem 1.2rem;
+    }
 
+    #education,
+    #projects,
+    #contact,
+    #fun-fact {
+        padding: 4.5rem 1.2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    h2 { font-size: 1.5rem; }
+
+    .edu-header { flex-direction: column; }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .fun-fact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-columns {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-photo {
+        order: -1;
+    }
+
+    .fun-card-main {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+
+    .project-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links { gap: 0.6rem; font-size: 0.75rem; }
+    .photo-wrapper { width: 160px; height: 160px; }
+    h1 { font-size: 1.4rem; }
+}

@@ -143,7 +143,7 @@ var terminalBody = document.getElementById('terminalBody');
 
 var terminalLines = [
     { key: 'name',               value: '"Kaumini Samodhi"'    },
-    { key: 'role',               value: '"CS Student"'          },
+    { key: 'role',               value: '"Undergraduate Student"'          },
     { key: 'university',         value: '"USJ"'                 },
     { key: 'status',             value: '"open to internships"' },
     { key: 'currently_building', value: '"HarvestHub"'          },
