@@ -1191,6 +1191,21 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    .photo-wrapper {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.terminal {
+    max-width: 100%;
+}
+
+.terminal-body {
+    font-size: 0.78rem;
+}
+
     section {
         padding: 4.5rem 1.2rem;
     }
