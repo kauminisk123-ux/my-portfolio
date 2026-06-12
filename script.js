@@ -84,6 +84,24 @@ document.querySelectorAll('section').forEach(function(section) {
     section.classList.add('fade-section');
 });
 
+var projectCards = document.querySelectorAll('.project');
+projectCards.forEach(function(card, index) {
+    card.classList.add('stagger');
+    card.style.transitionDelay = (index * 0.1) + 's';
+});
+
+function checkStagger() {
+    projectCards.forEach(function(card) {
+        var position = card.getBoundingClientRect().top;
+        if (position < window.innerHeight * 0.9) {
+            card.classList.add('visible');
+        }
+    });
+}
+
+window.addEventListener('scroll', checkStagger);
+checkStagger();
+
 
 
 var contactForm = document.getElementById('contactForm');
@@ -121,6 +139,80 @@ if (contactForm) {
     });
 }
 
+var terminalBody = document.getElementById('terminalBody');
+
+var terminalLines = [
+    { key: 'name',               value: '"Kaumini Samodhi"'    },
+    { key: 'role',               value: '"CS Student"'          },
+    { key: 'university',         value: '"USJ"'                 },
+    { key: 'status',             value: '"open to internships"' },
+    { key: 'currently_building', value: '"HarvestHub"'          },
+    { key: 'fun_fact',           value: '"K-dramas > homework"' },
+];
+
+if (terminalBody) {
+   
+    var termCursor = document.createElement('span');
+    termCursor.className = 'terminal-cursor';
+    terminalBody.appendChild(termCursor);
+
+    
+    terminalLines.forEach(function(item, index) {
+        setTimeout(function() {
+            
+            if (termCursor.parentNode) {
+                terminalBody.removeChild(termCursor);
+            }
+
+            
+            var line = document.createElement('div');
+            line.className = 'terminal-line';
+            line.style.animationDelay = '0s';
+            line.innerHTML =
+                '<span class="terminal-prompt">&gt;</span>' +
+                '<span class="terminal-key">' + item.key + '</span>' +
+                '<span class="terminal-colon">:&nbsp;</span>' +
+                '<span class="terminal-value">' + item.value + '</span>';
+            terminalBody.appendChild(line);
+
+            
+            terminalBody.appendChild(termCursor);
+
+            
+        }, 600 + index * 500);
+    });
+}
+
+
+
+var logoEl = document.getElementById('navLogo');
+
+if (logoEl) {
+    var logoText = '< KSK />';
+    var logoIndex = 0;
+
+
+    var cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    cursor.textContent = '|';
+    logoEl.appendChild(cursor);
+
+    function typeLogo() {
+        if (logoIndex < logoText.length) {
+            
+            logoEl.insertBefore(
+                document.createTextNode(logoText[logoIndex]),
+                cursor
+            );
+            logoIndex++;
+            setTimeout(typeLogo, 100);
+        }
+        
+    }
+
+    
+    setTimeout(typeLogo, 500);
+}
 
 
 window.dispatchEvent(new Event('scroll'));
