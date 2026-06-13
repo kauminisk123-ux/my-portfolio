@@ -1260,7 +1260,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .nav-links { gap: 0.6rem; font-size: 0.75rem; }
+    .nav-links { gap: 0.4rem; font-size: 0.7rem; }
     .photo-wrapper { width: 160px; height: 160px; }
     h1 { font-size: 1.4rem; }
 }
