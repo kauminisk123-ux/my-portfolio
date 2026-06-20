@@ -1,3 +1,6 @@
+
+
+
 document.querySelectorAll('a[href^="#"]').forEach(function(link) {
     link.addEventListener('click', function(e) {
         var target = document.querySelector(this.getAttribute('href'));
@@ -9,15 +12,12 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
 });
 
 
-
 var navbar = document.getElementById('navbar');
 var sections = document.querySelectorAll('section[id]');
 var navLinks = document.querySelectorAll('.nav-links a');
 var progressBar = document.getElementById('progressBar');
 
-
 window.addEventListener('scroll', function() {
-
 
     var scrollTop = window.scrollY;
     var docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -26,15 +26,12 @@ window.addEventListener('scroll', function() {
         progressBar.style.width = scrollPercent + '%';
     }
 
-
-    
     if (window.scrollY > 60) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
 
-    
     var currentSection = '';
     sections.forEach(function(section) {
         if (window.scrollY >= section.offsetTop - 120) {
@@ -51,7 +48,6 @@ window.addEventListener('scroll', function() {
         }
     });
 
-    
     var backToTop = document.getElementById('backToTop');
     if (window.scrollY > 400) {
         backToTop.style.display = 'flex';
@@ -59,7 +55,6 @@ window.addEventListener('scroll', function() {
         backToTop.style.display = 'none';
     }
 
-    
     document.querySelectorAll('.fade-section').forEach(function(el) {
         var position = el.getBoundingClientRect().top;
         if (position < window.innerHeight * 0.88) {
@@ -70,7 +65,6 @@ window.addEventListener('scroll', function() {
 });
 
 
-
 var backToTopBtn = document.getElementById('backToTop');
 if (backToTopBtn) {
     backToTopBtn.addEventListener('click', function() {
@@ -79,10 +73,10 @@ if (backToTopBtn) {
 }
 
 
-
 document.querySelectorAll('section').forEach(function(section) {
     section.classList.add('fade-section');
 });
+
 
 var projectCards = document.querySelectorAll('.project');
 projectCards.forEach(function(card, index) {
@@ -101,7 +95,6 @@ function checkStagger() {
 
 window.addEventListener('scroll', checkStagger);
 checkStagger();
-
 
 
 var contactForm = document.getElementById('contactForm');
@@ -139,11 +132,12 @@ if (contactForm) {
     });
 }
 
+
 var terminalBody = document.getElementById('terminalBody');
 
 var terminalLines = [
     { key: 'name',               value: '"Kaumini Samodhi"'    },
-    { key: 'role',               value: '"Undergraduate Student"'          },
+    { key: 'role',               value: '"CS Student"'          },
     { key: 'university',         value: '"USJ"'                 },
     { key: 'status',             value: '"open to internships"' },
     { key: 'currently_building', value: '"HarvestHub"'          },
@@ -151,20 +145,16 @@ var terminalLines = [
 ];
 
 if (terminalBody) {
-   
     var termCursor = document.createElement('span');
     termCursor.className = 'terminal-cursor';
     terminalBody.appendChild(termCursor);
 
-    
     terminalLines.forEach(function(item, index) {
         setTimeout(function() {
-            
             if (termCursor.parentNode) {
                 terminalBody.removeChild(termCursor);
             }
 
-            
             var line = document.createElement('div');
             line.className = 'terminal-line';
             line.style.animationDelay = '0s';
@@ -175,14 +165,11 @@ if (terminalBody) {
                 '<span class="terminal-value">' + item.value + '</span>';
             terminalBody.appendChild(line);
 
-            
             terminalBody.appendChild(termCursor);
 
-            
         }, 600 + index * 500);
     });
 }
-
 
 
 var logoEl = document.getElementById('navLogo');
@@ -191,7 +178,6 @@ if (logoEl) {
     var logoText = '< KSK />';
     var logoIndex = 0;
 
-
     var cursor = document.createElement('span');
     cursor.className = 'typing-cursor';
     cursor.textContent = '|';
@@ -199,7 +185,6 @@ if (logoEl) {
 
     function typeLogo() {
         if (logoIndex < logoText.length) {
-            
             logoEl.insertBefore(
                 document.createTextNode(logoText[logoIndex]),
                 cursor
@@ -207,12 +192,66 @@ if (logoEl) {
             logoIndex++;
             setTimeout(typeLogo, 100);
         }
-        
     }
 
-    
     setTimeout(typeLogo, 500);
 }
+
+
+var symbolsContainer = document.getElementById('floatingSymbols');
+
+if (symbolsContainer) {
+    var symbols = ['{ }', '< >', ';', '( )', '=>', '#', '&&', '++', '[ ]', '/* */', 'import', 'function()', 'console.log()'];
+    var totalSymbols = 14;
+
+    for (var i = 0; i < totalSymbols; i++) {
+        var span = document.createElement('span');
+        span.className = 'floating-symbol';
+        span.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+        span.style.left = Math.random() * 100 + '%';
+
+        var size = 14 + Math.random() * 18;
+        span.style.fontSize = size + 'px';
+
+        var duration = 12 + Math.random() * 10;
+        var delay = Math.random() * 15;
+        span.style.animationDuration = duration + 's';
+        span.style.animationDelay = delay + 's';
+
+        symbolsContainer.appendChild(span);
+    }
+}
+
+
+var observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-section').forEach(function(section) {
+    observer.observe(section);
+});
+
+var staggerObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.project.stagger').forEach(function(card) {
+    staggerObserver.observe(card);
+});
 
 
 window.dispatchEvent(new Event('scroll'));
