@@ -168,7 +168,7 @@ if (logoEl) {
 }
 var symbolsContainer = document.getElementById('floatingSymbols');
 if (symbolsContainer) {
-    var symbols = ['{ }', '< >', ';', '( )', '=>', '#', '&&', '++', '[ ]', '', 'import', 'function()', 'console.log()', 'var', 'let', 'const', 'class', 'return', 'if()', 'else', 'for()', 'while()', 'switch()', 'case', 'break', 'continue', 'try', 'catch', 'finally', 'throw', 'new', 'this', 'super', 'extends'];
+    var symbols = ['{ }', '< >', ';', '( )', '=>', '#', '&&', '++', '//', '', '/* */'];
     var totalSymbols = 14;
     for (var i = 0; i < totalSymbols; i++) {
         var span = document.createElement('span');
