@@ -9,9 +9,10 @@ This is my personal portfolio website for my 2nd year DevOps assignment. It show
 - JavaScript
 - GitHub Pages
 - GitHub Actions (CI/CD)
+- MP4 video (animated avatar)
 
 ## Sections
-- **Home** - Introduction with terminal animation and KS initials avatar
+- **Home** - Introduction with terminal animation and animated MP4 avatar (waving, laughing, thinking)
 - **Education** - B.Sc. in Physical Science ICT at USJ
 - **Skills** - Programming, Web Dev, CS Core, Tools, Science
 - **Projects** - HarvestHub, Logistics Management System, Sales Management System, Pizzrella Website, PetCare Website
