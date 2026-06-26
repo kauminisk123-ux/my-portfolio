@@ -183,10 +183,19 @@ h2::after {
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, rgba(13, 148, 136, 0.3), transparent);
-    margin-left: 1.2rem;
+    margin-left: 1rem;
+    background: linear-gradient(90deg, var(--teal) 0%, rgba(13,148,136,0.3) 30%, transparent 70%);
+    position: relative;
+    overflow: hidden;
+    background-size: 200% 100%;
+    animation: signalPulse 3s ease-in-out infinite;
 }
-/* ── Custom cursor (signature touch) ── */
+
+@keyframes signalPulse {
+    0%   { background-position: -100% 0; opacity: 0.4; }
+    50%  { background-position: 100% 0;  opacity: 1; }
+    100% { background-position: 300% 0;  opacity: 0.4; }
+}
 .cursor-dot {
     position: fixed;
     width: 8px;
@@ -241,7 +250,7 @@ body:has(button:hover) .cursor-ring {
     overflow: hidden;
 }
 .floating-symbols {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -251,7 +260,7 @@ body:has(button:hover) .cursor-ring {
     z-index: 0;
 }
 .floating-symbol {
-    position: absolute;
+    position: fixed;
     bottom: -40px;
     color: rgba(13, 148, 136, 0.10);   
     font-family: 'Courier New', monospace;
@@ -437,13 +446,8 @@ body:has(button:hover) .cursor-ring {
     animation: gentleFloat 3s ease-in-out infinite;
 }
 @keyframes gentleFloat {
-    0%,
-    100% {
-        transform: translateY(0) scale(1);
-    }
-    50% {
-        transform: translateY(-6px) scale(1.02);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
 h1 {
     font-size: clamp(1.8rem, 4.5vw, 2.6rem);
