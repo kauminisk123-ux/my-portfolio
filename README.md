@@ -15,9 +15,9 @@ This is my personal portfolio website for my 2nd year DevOps assignment. It show
 - **Home** - Introduction with terminal animation and animated MP4 avatar (waving, laughing, thinking)
 - **Education** - B.Sc. in Physical Science ICT at USJ
 - **Skills** - Programming, Web Dev, CS Core, Tools, Science
-- **Projects** - HarvestHub, Logistics Management System, Sales Management System, Pizzrella Website, PetCare Website
+- **Projects** - Featured projects including HarvestHub, This Portfolio, Logistics Management System, and Sales Management System
 - **Fun Fact** - K-dramas and crime thrillers enthusiast
-- **Contact** - Email, GitHub, LinkedIn, Phone with contact form
+- **Contact** - Social links, availability card, "What I'm looking for" tags, and contact form
 
 ## Live Website
 [View Portfolio](https://kauminisk123-ux.github.io/my-portfolio)
