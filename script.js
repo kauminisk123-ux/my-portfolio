@@ -240,4 +240,30 @@ var staggerObserver = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.project.stagger').forEach(function(card) {
     staggerObserver.observe(card);
 });
+var statObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.edu-stat-num[data-target]').forEach(function(el) {
+                var target = parseInt(el.getAttribute('data-target'), 10);
+                var start  = 0;
+                var duration = 1000;
+                var step = target / (duration / 16);
+                var current = start;
+                var timer = setInterval(function() {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = Math.floor(current);
+                }, 16);
+            });
+            statObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+var eduCard = document.querySelector('.edu-card');
+if (eduCard) statObserver.observe(eduCard);
+
 window.dispatchEvent(new Event('scroll'));
