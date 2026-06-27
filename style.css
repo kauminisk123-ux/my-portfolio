@@ -1091,44 +1091,77 @@ h1 {
 .contact-left {
     display: flex;
     flex-direction: column;
+    gap: 1.2rem
 }
 .contact-intro-text p {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: 2.5rem;
 }
 .contact-reach {
-    font-size: 0.68rem;
-    font-weight: 600;
+    font-size: 0.62rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: var(--text-muted);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 .social-icons {
     display: flex;
     gap: 0.8rem;
-    margin-bottom: 2rem;
     flex-wrap: wrap;
+}
+.contact-what {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+}
+.contact-what-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 0.65rem;
+}
+.contact-what-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.contact-what-tags span {
+    font-size: 0.7rem;
+    padding: 0.22rem 0.65rem;
+    border-radius: 50px;
+    background: rgba(13,148,136,0.04);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+.contact-what-tags span:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+    background: var(--teal-subtle);
 }
 .social-btn {
     position: relative;
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     color: var(--text-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s var(--ease-spring), box-shadow 0.25s ease, background 0.25s ease;
 }
 .social-btn:hover {
-    background: rgba(13, 148, 136, 0.03);
+    background: var(--teal-subtle);
     border-color: var(--teal);
     color: var(--teal);
     transform: translateY(-4px);
@@ -1139,35 +1172,35 @@ h1 {
     bottom: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
-    background: var(--card-bg);
+    background: var(--surface);
     color: var(--text-primary);
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     padding: 0.15rem 0.5rem;
-    border-radius: 6px;
+    border-radius: 5px;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
-    border: 1px solid var(--border-color);
+    transition: opacity 0.2s ease;
+    border: 1px solid var(--border-mid);
 }
 .social-btn:hover .social-tooltip {
     opacity: 1;
 }
 .contact-availability {
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.2rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.1rem 1.3rem;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0.65rem;
     margin-bottom: 1.2rem;
 }
 .avail-row {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
-    font-size: 0.82rem;
+    gap: 0.65rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
 }
 .avail-dot {
@@ -1179,10 +1212,13 @@ h1 {
     animation: gentleFloat 2s ease-in-out infinite;
 }
 .avail-icon {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     color: var(--teal);
-    width: 18px;
+    width: 16px;
     text-align: center;
+}
+.avail-text {
+    font-size: 0.8rem;
 }
 .cv-btn {
     display: inline-flex;
@@ -1190,113 +1226,102 @@ h1 {
     gap: 0.5rem;
     margin-top: 0.2rem;
     background: transparent;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-mid);
     color: var(--text-secondary);
-    padding: 0.6rem 1.4rem;
+    padding: 0.55rem 1.3rem;
     border-radius: 50px;
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 500;
-    transition: all 0.4s ease;
+    transition: var(--transition);
     width: fit-content;
 }
 .cv-btn:hover {
     border-color: var(--teal);
     color: var(--teal);
-    background: rgba(13, 148, 136, 0.02);
+    background: rgba(13, 148, 136, 0.04);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.04);
+     box-shadow: 0 8px 20px rgba(13, 148, 136, 0.08);
 }
 .contact-right {
     background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 2rem;
+    padding: 1.8rem;
 }
 .form-header {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.65rem;
     margin-bottom: 1.5rem;
 }
 .form-dot {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     background: var(--teal);
     display: inline-block;
 }
 .form-title {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--text-primary);
 }
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    margin-bottom: 1rem;
+    gap: 0.22rem;
+    margin-bottom: 0.9rem;
 }
 .form-group label {
-    font-size: 0.68rem;
+    font-size: 0.63rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.08em;
     color: var(--text-muted);
 }
-input,
-textarea {
+input, textarea {
     width: 100%;
-    padding: 0.7rem 1rem;
-    border: 1px solid var(--border-color);
+    padding: 0.65rem 0.95rem;
+    border: 1px solid var(--border-mid);
     border-radius: var(--radius-sm);
     font-family: 'Poppins', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.83rem;
     color: var(--text-primary);
-    background: rgba(13, 17, 23, 0.5);
-    transition: all 0.35s ease;
+    background: rgba(11,15,20,0.6);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
     outline: none;
 }
-input::placeholder,
-textarea::placeholder {
-    color: var(--text-muted);
-}
-input:focus,
-textarea:focus {
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
+input:focus, textarea:focus {
     border-color: var(--teal);
-    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.04);
-    background: rgba(13, 17, 23, 0.7);
+    box-shadow: 0 0 0 3px rgba(13,148,136,0.07);
 }
-textarea {
-    resize: vertical;
-}
+textarea { resize: vertical; }
 button[type="submit"] {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     background: var(--teal);
-    color: white;
+    color: #fff;
     border: none;
-    padding: 0.7rem 1.8rem;
+    padding: 0.65rem 1.7rem;
     border-radius: 50px;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background 0.25s ease, transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
     width: fit-content;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
 }
 button[type="submit"]:hover {
     background: var(--teal-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(13, 148, 136, 0.2);
+    box-shadow: 0 8px 24px rgba(13,148,136,0.25);
 }
-#formFeedback {
-    font-size: 0.82rem;
-    margin-top: 0.8rem;
-}
+#formFeedback { font-size: 0.8rem; margin-top: 0.7rem; }
 footer {
     background: #080c10;
     border-top: 1px solid #30363d;

@@ -278,7 +278,7 @@
             <span>All code lives on</span>
             <a href="https://github.com/kauminisk123-ux" target="_blank" rel="noopener">github.com/kauminisk123-ux</a>
             <span class="github-bar-arrow">→</span>
-        </div>
+        </div><br>
 
         <div class="project-list">
 
@@ -296,7 +296,7 @@
                 <h3>💻 This Portfolio <span class="status completed">Live</span></h3>
                 <p>My personal portfolio website — built from scratch with HTML, CSS, and JavaScript. Features a terminal animation, custom cursor, skill rings, and a fully automated CI/CD pipeline with GitHub Actions.</p>
                 <p class="tech-used">HTML &nbsp;|&nbsp; CSS &nbsp;|&nbsp; JavaScript &nbsp;|&nbsp; GitHub Actions</p>
-                <a href="https://kauminisk123-ux.github.io/my-portfolio/" class="project-link" target="_blank" rel="noopener">Live site →</a>
+                <a href="https://github.com/kauminisk123-ux/my-portfolio" class="project-link" target="_blank" rel="noopener">View on GitHub →</a>
             </div>
 
             <div class="project">
@@ -381,10 +381,6 @@
                         <i class="fab fa-linkedin-in"></i>
                         <span class="social-tooltip">LinkedIn</span>
                     </a>
-                    <a href="tel:+94760064801" class="social-btn" aria-label="Phone">
-                        <i class="fas fa-phone"></i>
-                        <span class="social-tooltip">Call</span>
-                    </a>
                 </div>
 
                 <div class="contact-availability">
@@ -401,6 +397,15 @@
                         <span class="avail-text">Sri Lanka &nbsp;·&nbsp; Open to remote</span>
                     </div>
                 </div>
+                <div class="contact-what">
+                    <p class="contact-what-label">What I'm looking for</p>
+                    <div class="contact-what-tags">
+                        <span>🎓 Internship</span>
+                        <span>💻 Web Projects</span>
+                        <span>🤝 Collaboration</span>
+                        <span>🌐 Open Source</span>
+                    </div>
+                </div>
 
                 <a href="cv.pdf" download class="cv-btn">
                     <i class="fas fa-download"></i> Download my CV
@@ -413,7 +418,10 @@
                     <span class="form-dot"></span>
                     <span class="form-title">Send me a message</span>
                 </div>
-                <form id="contactForm">
+                <form id="contactForm" action="https://formsubmit.co/kauminisk123@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://kauminisk123-ux.github.io/my-portfolio/">
+                    <input type="hidden" name="_subject" value="New message from portfolio">
                     <div class="form-group">
                         <label for="name">Your name</label>
                         <input type="text" id="name" placeholder="e.g. Amara Perera" required autocomplete="name">

@@ -120,31 +120,29 @@ function checkStagger() {
 }
 window.addEventListener('scroll', checkStagger);
 checkStagger();
-var contactForm = document.getElementById('contactForm');
+var contactForm  = document.getElementById('contactForm');
 var formFeedback = document.getElementById('formFeedback');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var name  = document.getElementById('name').value.trim();
-        var email = document.getElementById('email').value.trim();
-        var msg   = document.getElementById('msg').value.trim();
+        var name    = document.getElementById('name').value.trim();
+        var email   = document.getElementById('email').value.trim();
+        var msg     = document.getElementById('msg').value.trim();
         var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
         if (!name || !email || !msg) {
+            e.preventDefault();
             formFeedback.textContent = '❌ Please fill in all fields.';
             formFeedback.style.color = '#dc2626';
             return;
         }
         if (!emailOk) {
+            e.preventDefault();
             formFeedback.textContent = '❌ Please enter a valid email address.';
             formFeedback.style.color = '#dc2626';
             return;
         }
-        formFeedback.textContent = '✅ Thank you, ' + name + '! I will reply within 48 hours.';
+        formFeedback.textContent = '✅ Message sent! I will reply within 48 hours.';
         formFeedback.style.color = '#166534';
-        contactForm.reset();
-        setTimeout(function() {
-            formFeedback.textContent = '';
-        }, 5000);
     });
 }
 var terminalBody = document.getElementById('terminalBody');
