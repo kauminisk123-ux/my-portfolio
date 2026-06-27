@@ -89,6 +89,15 @@ window.addEventListener('scroll', function() {
     } else {
         backToTop.style.display = 'none';
     }
+    var ring = document.getElementById('scrollRing');
+    if (ring) {
+        var circumference = 263.89;
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollPercent = (scrollTop / docHeight) * 100;
+        var dashOffset = circumference - (scrollPercent / 100) * circumference;
+        ring.style.strokeDashoffset = dashOffset;
+    }
     document.querySelectorAll('.fade-section').forEach(function(el) {
         var position = el.getBoundingClientRect().top;
         if (position < window.innerHeight * 0.88) {

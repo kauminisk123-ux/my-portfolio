@@ -1402,8 +1402,8 @@ footer {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    width: 44px;
-    height: 44px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: var(--teal);
     color: white;
@@ -1414,13 +1414,39 @@ footer {
     justify-content: center;
     cursor: pointer;
     z-index: 500;
-    box-shadow: 0 4px 20px rgba(13, 148, 136, 0.15);
+    box-shadow: 0 4px 20px rgba(13, 148, 136, 0.2);
     transition: all 0.35s ease;
 }
 .back-to-top:hover {
     background: var(--teal-dark);
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 30px rgba(13, 148, 136, 0.25);
+    box-shadow: 0 8px 30px rgba(13, 148, 136, 0.3);
+}
+.back-to-top i {
+    position: relative;
+    z-index: 2;
+}
+.back-to-top-ring {
+    position: absolute;
+    inset: -4px;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    transform: rotate(-90deg);
+    z-index: 1;
+}
+.back-to-top-ring-bg {
+    fill: none;
+    stroke: rgba(48, 54, 61, 0.3);
+    stroke-width: 3;
+}
+.back-to-top-ring-progress {
+    fill: none;
+    stroke: var(--teal-light);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 263.89;
+    stroke-dashoffset: 263.89;
+    transition: stroke-dashoffset 0.15s ease-out;
 }
 .fade-section {
     opacity: 0;
