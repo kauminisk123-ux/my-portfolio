@@ -207,7 +207,7 @@ if (logoEl) {
 }
 var symbolsContainer = document.getElementById('floatingSymbols');
 if (symbolsContainer) {
-    var symbols = ['{ }', '< >', ';', '( )', '=>', '#', '&&', '++', '//', '', '/* */'];
+    var symbols = ['{ }', '< >', ';', '( )', '=>', '#', '&&', '++', '//', '/* */'];
     var totalSymbols = 14;
     for (var i = 0; i < totalSymbols; i++) {
         var span = document.createElement('span');
